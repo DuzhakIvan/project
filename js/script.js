@@ -33,9 +33,6 @@ genres
 
 P.S. Функции вызывать не обязательно*/
 
-
-
-
 const numbersOfQuestion = 2;
 
 function rememberMyFilms () {
@@ -57,7 +54,6 @@ function rememberMyFilms () {
 
 rememberMyFilms();
 
-console.log(personalMovieDB);
 
 function detectPersonalLevel() {
     if (personalMovieDB.count < 10) {
@@ -71,3 +67,20 @@ function detectPersonalLevel() {
     }
     
 }
+
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+function writeYourGenres() {
+
+    for ( let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i-1] = prompt(`Ваш любимый жанр под номером ${i}`);;
+    }
+}
+
+writeYourGenres();
+
+showMyDB(personalMovieDB.privat);
